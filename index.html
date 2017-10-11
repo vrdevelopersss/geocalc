@@ -12,15 +12,24 @@
       var y2 = parseInt(prompt("2nd point Y"));
       var deltax = x2 - x1;
       if(deltax < 0){ deltax *= -1; }
+      console.log("deltax = " + deltax);
       var deltay = y2 - y1;
       if(deltay < 0){ deltay *= -1; }
+      console.log("deltay = " + deltay);
       var a1 = (180 - deltax) / 2;
+      console.log("a1 = " + a1);
       var a2 = (180 - deltay) / 2;
+      console.log("a2 = " + a2);
       var koxma = (Math.sin(deltax) * r) / Math.sin(a1);
+      console.log("koxma" + koxma);
       var koxmb = (Math.sin(deltay) * r) / Math.sin(a2);
+      console.log("koxmb" + koxmb);
       var koxmc = Math.sqrt( (koxma * koxma) + (koxmb * koxmb) );
+      console.log("koxmc" + koxmc);
       var alpha = Math.acos( ((2 * r * r) - (koxmc * koxmc)) / (2 * r * r)) * (180 / Math.PI);
+      console.log("alpha" + alpha);
       var ans = (Math.PI * r * alpha) / 180;
+      console.log("ans = " + ans);
       ans -= ans % 1;
       alert( ans + "  KILOMETERS" );
     </script> 
