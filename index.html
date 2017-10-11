@@ -26,7 +26,7 @@
       console.log("koxmb = " + koxmb);
       var koxmc = Math.sqrt( (koxma * koxma) + (koxmb * koxmb) );
       console.log("koxmc = " + koxmc);
-      var alpha = Math.acos( ((2 * r * r) - (koxmc * koxmc)) / (2 * r * r)) * (180 / Math.PI);
+      var alpha = (Math.acos( ((2 * r * r) - (koxmc * koxmc)) / (2 * r * r))) * (180 / Math.PI);
       console.log("alpha = " + alpha);
       var ans = (Math.PI * r * alpha) / 180;
       console.log("ans = " + ans);
