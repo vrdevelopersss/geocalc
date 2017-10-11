@@ -19,7 +19,7 @@
       var koxma = (Math.sin(deltax) * r) / Math.sin(a1);
       var koxmb = (Math.sin(deltay) * r) / Math.sin(a2);
       var koxmc = Math.sqrt( (koxma * koxma) + (koxmb * koxmb) );
-      var alpha = Math.acos( ((2 * r * r) - (c * c)) / (2 * r * r)) * (180 / Math.PI);
+      var alpha = Math.acos( ((2 * r * r) - (koxmc * koxmc)) / (2 * r * r)) * (180 / Math.PI);
       var ans = (Math.PI * r * alpha) / 180;
       alert( ans );
     </script> 
