@@ -6,10 +6,10 @@
   <body>
     <script> 
       var r = 6370;
-      var x1 = prompt("1st point X");
-      var y1 = prompt("1st point Y");
-      var x2 = prompt("2nd point X");
-      var y2 = prompt("2nd point Y");
+      var x1 = parseInt(prompt("1st point X"));
+      var y1 = parseInt(prompt("1st point Y"));
+      var x2 = parseInt(prompt("2nd point X"));
+      var y2 = parseInt(prompt("2nd point Y"));
       var deltax = x2 - x1;
       if(deltax < 0){ deltax *= -1; }
       var deltay = y2 - y1;
