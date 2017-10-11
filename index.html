@@ -5,6 +5,10 @@
   </head>
   <body>
     <script>
+      
+      
+      
+      
       var d,x1,x2,y1,y2;
       x1 = prompt("x1");
       y1= prompt("y1");
@@ -13,6 +17,12 @@
       d = ( (x1-x2)*(x1-x2) ) + ( (y1-y2)*(y1-y2) );
       alert(Math.sqrt(d)*111);
     </script> 
-    <button onclick="location.reload();">Try again</button>
+    <form action="script.js" id="myForm">
+      <input type="number" name="x1" placeholder="1st point X">
+      <input type="number" name="x1" placeholder="1st point Y">
+      <input type="number" name="x1" placeholder="2nd point X">
+      <input type="number" name="x1" placeholder="2nd point Y">
+      <input type="submit" name="submit" value="submit">
+    </form>
   </body>
 </html>
