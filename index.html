@@ -21,13 +21,13 @@
       var a2 = (180 - deltay) / 2;
       console.log("a2 = " + a2);
       var koxma = (Math.sin(deltax) * r) / Math.sin(a1);
-      console.log("koxma" + koxma);
+      console.log("koxma = " + koxma);
       var koxmb = (Math.sin(deltay) * r) / Math.sin(a2);
-      console.log("koxmb" + koxmb);
+      console.log("koxmb = " + koxmb);
       var koxmc = Math.sqrt( (koxma * koxma) + (koxmb * koxmb) );
-      console.log("koxmc" + koxmc);
+      console.log("koxmc = " + koxmc);
       var alpha = Math.acos( ((2 * r * r) - (koxmc * koxmc)) / (2 * r * r)) * (180 / Math.PI);
-      console.log("alpha" + alpha);
+      console.log("alpha = " + alpha);
       var ans = (Math.PI * r * alpha) / 180;
       console.log("ans = " + ans);
       ans -= ans % 1;
