@@ -4,26 +4,31 @@
     <meta charset="utf8">
   </head>
   <body>
-    <script>
-      var geoInf = document.getElementById('myForm');
-      alert(geoInf.x1);
-      
-      
-      
-      var d,x1,x2,y1,y2;
-      x1 = prompt("x1");
-      y1= prompt("y1");
-      x2 = prompt("x2");
-      y2 = prompt("y2");
-      d = ( (x1-x2)*(x1-x2) ) + ( (y1-y2)*(y1-y2) );
-      alert(Math.sqrt(d)*111);
+    <script> 
+      var r = 6370;
+      var x1 = prompt("1st point X");
+      var y1 = prompt("1st point Y");
+      var x2 = prompt("2nd point X");
+      var y2 = prompt("2nd point Y");
+      var deltax = x2 - x1;
+      if(deltax < 0){ deltax *= -1; }
+      var deltay = y2 - y1;
+      if(deltay < 0){ deltay *= -1; }
+      var a1 = (180 - deltax) / 2;
+      var a2 = (180 - deltay) / 2;
+      var koxma = (Math.sin(deltax) * r) / Math.sin(a1);
+      var koxmb = (Math.sin(deltay) * r) / Math.sin(a2);
+      var koxmc = Math.sqrt( (koxma * koxma) + (koxmb * koxmb) );
+      var alpha = Math.acos( ((2 * r * r) - (c * c)) / (2 * r * r)) * (180 / Math.PI);
+      var ans = (Math.PI * r * alpha) / 180;
+      alert( ans );
     </script> 
-    <form action="#" id="myForm">
+<!--     <form action="#" id="myForm">
       <input type="number" name="x1" placeholder="1st point X">
       <input type="number" name="y1" placeholder="1st point Y">
       <input type="number" name="x2" placeholder="2nd point X">
       <input type="number" name="y2" placeholder="2nd point Y">
       <input type="submit" name="submit" value="submit">
-    </form>
+    </form> -->
   </body>
 </html>
