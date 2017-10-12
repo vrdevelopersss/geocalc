@@ -1,44 +1,49 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Geo Calculator</title>
-    <meta charset="utf8">
-  </head>
-  <body>
-    <script> 
-      var r = 6370;
-      var x1 = parseInt(prompt("1st point X"));
-      var y1 = parseInt(prompt("1st point Y"));
-      var x2 = parseInt(prompt("2nd point X"));
-      var y2 = parseInt(prompt("2nd point Y"));
-      var deltax = x2 - x1;
-      if(deltax < 0){ deltax *= -1; }
-      console.log("deltax = " + deltax);
-      var deltay = y2 - y1;
-      if(deltay < 0){ deltay *= -1; }
-      console.log("deltay = " + deltay);
-      var a1 = (180 - deltax) / 2;
-      console.log("a1 = " + a1);
-      var a2 = (180 - deltay) / 2;
-      console.log("a2 = " + a2);
-      var koxma = (Math.sin(deltax) * r) / Math.sin(a1);
-      console.log("koxma = " + koxma);
-      var koxmb = (Math.sin(deltay) * r) / Math.sin(a2);
-      console.log("koxmb = " + koxmb);
-      var koxmc = Math.sqrt( (koxma * koxma) + (koxmb * koxmb) );
-      console.log("koxmc = " + koxmc);
-      var alpha = ( Math.acos( ((2 * r * r) - (koxmc * koxmc)) / (2 * r * r)) ) * (180 / Math.PI);
-      console.log("alpha = " + alpha);
-      var ans = (Math.PI * r * alpha) / 180;
-      console.log("ans = " + ans);
-      ans -= ans % 1;
-      alert( ans + "  kilometers" );
-    </script> 
-<!--     <form action="#" id="myForm">
-      <input type="number" name="x1" placeholder="1st point X">
-      <input type="number" name="y1" placeholder="1st point Y">
-      <input type="number" name="x2" placeholder="2nd point X">
-      <input type="number" name="y2" placeholder="2nd point Y">
-      <input type="submit" name="submit" value="submit">
-    </form> -->
-  </body>
+<head>
+	<title>Geo Calc</title>
+</head>
+<body>
+	<form>
+		<input placeholder="X1" type="number" id="x1">
+		<input placeholder="Y1" type="number" id="y1">
+		<input placeholder="X2" type="number" id="x2">
+		<input placeholder="Y2" type="number" id="y2">
+		<input type="submit" name="submit" onclick="al()" value="submit">
+	</form>
+	<script type="text/javascript">
+		function al(){
+			var rad = 57.2958;
+			var r = 6370;
+			var x1 = document.getElementById('x1').value;
+			var y1 = document.getElementById('y1').value;
+			var x2 = document.getElementById('x2').value;
+			var y2 = document.getElementById('y2').value;
+			var deltax = x2 - x1;
+			if(deltax < 0){ deltax *= -1; }
+			console.log("deltax = " + deltax);
+			var deltay = y2 - y1;
+			if(deltay < 0){ deltay *= -1; }
+			console.log("deltay = " + deltay);
+			var a1 = (180 - deltax) / 2;
+			console.log("a1 = " + a1);
+			var a2 = (180 - deltay) / 2;
+			console.log("a2 = " + a2);
+			var koxma = (Math.sin(deltax * ( Math.PI / 180 )) * r) / Math.sin(a1 * ( Math.PI / 180 ));
+			console.log("koxma = " + koxma);
+			var koxmb = (Math.sin(deltay * ( Math.PI / 180 )) * r) / Math.sin(a2 * ( Math.PI / 180 ));
+			console.log("koxmb = " + koxmb);
+			var koxmc = Math.sqrt( (koxma * koxma) + (koxmb * koxmb) );
+			console.log("koxmc = " + koxmc);
+			var acos = ( ( 2  * r * r ) - ( koxmc * koxmc ) ) / ( 2  * r * r );
+			var alpha = Math.acos( acos );
+			alpha = alpha * ( 180 / Math.PI );
+			console.log("alpha = " + alpha);
+			var ans = (Math.PI * r * alpha) / 180;
+			console.log("ans = " + ans);
+			ans -= ans % 1;
+			alert( ans + "  kilometers" );
+		}
+	</script>
+</body>
 </html>
