@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Geo Calc</title>
-</head>
-<body>
-	<form>
-		<input placeholder="X1" type="number" id="x1">
-		<input placeholder="Y1" type="number" id="y1">
-		<input placeholder="X2" type="number" id="x2">
-		<input placeholder="Y2" type="number" id="y2">
-		<input type="submit" name="submit" onclick="al()" value="submit">
-	</form>
-	<script type="text/javascript">
-		function al(){
-			var rad = 57.2958;
-			var r = 6370;
-			var x1 = document.getElementById('x1').value;
-			var y1 = document.getElementById('y1').value;
-			var x2 = document.getElementById('x2').value;
-			var y2 = document.getElementById('y2').value;
-			var deltax = x2 - x1;
-			if(deltax < 0){ deltax *= -1; }
-                        if(deltax > 180){deltax = 360 - deltax;}
-			console.log("deltax = " + deltax);
-			var deltay = y2 - y1;
-			if(deltay < 0){ deltay *= -1; }
-			if(deltay > 180){deltay = 360 - deltay;}
-			console.log("deltay = " + deltay);
-			var a1 = (180 - deltax) / 2;
-			console.log("a1 = " + a1);
-			var a2 = (180 - deltay) / 2;
-			console.log("a2 = " + a2);
-			var koxma = (Math.sin(deltax * ( Math.PI / 180 )) * r) / Math.sin(a1 * ( Math.PI / 180 ));
-			console.log("koxma = " + koxma);
-			var koxmb = (Math.sin(deltay * ( Math.PI / 180 )) * r) / Math.sin(a2 * ( Math.PI / 180 ));
-			console.log("koxmb = " + koxmb);
-			var koxmc = Math.sqrt( (koxma * koxma) + (koxmb * koxmb) );
-			console.log("koxmc = " + koxmc);
-			var acos = ( ( 2  * r * r ) - ( koxmc * koxmc ) ) / ( 2  * r * r );
-			var alpha = Math.acos( acos );
-			alpha = alpha * ( 180 / Math.PI );
-			console.log("alpha = " + alpha);
-			var ans = (Math.PI * r * alpha) / 180;
-			console.log("ans = " + ans);
-			ans -= ans % 1;
-			alert( ans + "  kilometers" );
-		}
-	</script>
-</body>
+    <head>
+        <title>Geo Calc</title>
+    </head>
+    <body>
+        <form>
+            <input placeholder="X1" type="number" id="x1">
+            <input placeholder="Y1" type="number" id="y1">
+            <input placeholder="X2" type="number" id="x2">
+            <input placeholder="Y2" type="number" id="y2">
+            <input type="submit" name="submit" onclick="al()" value="submit">
+        </form>
+        <script type="text/javascript">
+            function al(){
+                var rad = 57.2958;
+                var r = 6370;
+                var x1 = document.getElementById('x1').value;
+                var y1 = document.getElementById('y1').value;
+                var x2 = document.getElementById('x2').value;
+                var y2 = document.getElementById('y2').value;
+                var deltax = x2 - x1;
+                if(deltax < 0){ deltax *= -1; }
+                if(deltax > 180){deltax = 360 - deltax;}
+                console.log("deltax = " + deltax);
+                var deltay = y2 - y1;
+                if(deltay < 0){ deltay *= -1; }
+                if(deltay > 180){deltay = 360 - deltay;}
+                console.log("deltay = " + deltay);
+                var a1 = (180 - deltax) / 2;
+                console.log("a1 = " + a1);
+                var a2 = (180 - deltay) / 2;
+                console.log("a2 = " + a2);
+                var koxma = (Math.sin(deltax * ( Math.PI / 180 )) * r) / Math.sin(a1 * ( Math.PI / 180 ));
+                console.log("koxma = " + koxma);
+                var koxmb = (Math.sin(deltay * ( Math.PI / 180 )) * r) / Math.sin(a2 * ( Math.PI / 180 ));
+                console.log("koxmb = " + koxmb);
+                var koxmc = Math.sqrt( (koxma * koxma) + (koxmb * koxmb) );
+                console.log("koxmc = " + koxmc);
+                var acos = ( ( 2  * r * r ) - ( koxmc * koxmc ) ) / ( 2  * r * r );
+                var alpha = Math.acos( acos );
+                alpha = alpha * ( 180 / Math.PI );
+                console.log("alpha = " + alpha);
+                var ans = (Math.PI * r * alpha) / 180;
+                console.log("ans = " + ans);
+                ans -= ans % 1;
+                alert( ans + "  kilometers" );
+            }
+        </script>
+    </body>
 </html>
