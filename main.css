@@ -71,7 +71,7 @@ body{
 
 @font-face{
     font-family:"Organo";
-    src:url(organo.ttf);
+    src:url("Organo.ttf");
     font-weight:normal;
 }
 .i:hover::-webkit-input-placeholder{
