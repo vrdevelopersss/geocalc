@@ -1,0 +1,88 @@
+body{
+/*
+    margin: 0;
+    padding: 0;
+*/
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 3em;
+    background-color: #333333
+}
+
+.i{
+    transition: 0.3s;
+/*    height:12%;*/
+    font-family: "Organo";
+    border-radius: 2em;
+    border:solid 2px;
+    border-color: rgba(30, 141, 106, 0);
+/*
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+*/
+    background:#d8d8d8;
+    color: #484848;
+}
+.i:focus{
+    outline: none;
+    
+}
+.i:hover{
+    border-color: #1c6069;
+}
+.f{
+  float: left;
+/*
+    margin-left: 2%;
+    margin-top: 1%;
+    width: 20%;
+    height: 20%;
+*/
+}
+.e{
+   display: inline-block;
+/*
+    margin-left: 2%;
+    margin-top: 1%;
+*/
+/*    width: 10%;*/
+/*    height: 2em;*/
+    color: red;
+}
+.e:focus{
+    color: blue;
+}
+#submit-input{
+/*    width: 80%;*/
+/*    height: 100%;*/
+    font-family: "Organo";
+    color: #4d4d4d;
+    border-radius: 2em;
+    border:solid 2px;
+    border-color: #cadff2;
+    cursor: pointer;
+    transition: color 0.3s , border-color 0.3s;
+}
+#submit-input:hover{
+    color: red;
+    border-color: #1c6069;
+}
+
+@font-face{
+    font-family:"Organo";
+    src:url(organo.ttf);
+    font-weight:normal;
+}
+.i:hover::-webkit-input-placeholder{
+    color: red;
+}
+.i:hover::-moz-placeholder{
+    color: red;
+}
+.i:hover:-moz-placeholder{
+    color: red;
+}
+.i:hover:-ms-input-placeholder{
+    color:red;
+}
