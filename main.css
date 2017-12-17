@@ -68,6 +68,9 @@ body{
     color: red;
     border-color: #1c6069;
 }
+#submit-input:active{
+    outline:none;
+}
 
 @font-face{
     font-family:"Organo";
