@@ -1,25 +1,38 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" href="main.css">
+        <meta charset="utf-8" name="viewport">
         <title>Geo Calc</title>
     </head>
     <body>
-        <form>
-            <input placeholder="X1" type="number" id="x1">
-            <input placeholder="Y1" type="number" id="y1">
-            <input placeholder="X2" type="number" id="x2">
-            <input placeholder="Y2" type="number" id="y2">
-            <input type="submit" name="submit" onclick="al()" value="submit">
-        </form>
+        <div class="f col-md-6 mt-2"><input id="f1" type="text" class="i" placeholder="X1"></div>
+        <div class="f col-md-6 mt-2"><input id="f2" type="text" class="i" placeholder="X2"></div>
+        <div class="f col-md-6 mt-2"><input id="f3" type="text"  class="i"placeholder="Y1" ></div>
+        <div class="f col-md-6 mt-2"><input id="f4" type="text" class="i" placeholder="Y2"></div>
+        <div class="e col-md mt-2"><input type="submit" value="Submit" id="submit-input" onclick="al()" ></div>
         <script type="text/javascript">
-            function al(){
+            var clicked = false;
+            function al()
+            {
+                if(clicked)
+                {
+                    location.reload();
+                }
+                clicked = true;
                 Math.PI = 3.14159265359;
                 var rad = 57.2958;
                 var r = 6370;
-                var x1 = document.getElementById('x1').value;
-                var y1 = document.getElementById('y1').value;
-                var x2 = document.getElementById('x2').value;
-                var y2 = document.getElementById('y2').value;
+                var x1 = document.getElementById('f1').value;
+                var y1 = document.getElementById('f3').value;
+                var x2 = document.getElementById('f2').value;
+                var y2 = document.getElementById('f4').value;
+                console.log(x1,x2,y1,y2);
+                x1 = parseFloat(x1);
+                y1 = parseFloat(y1);
+                x2 = parseFloat(x2);
+                y2 = parseFloat(y2);
                 var deltax = x2 - x1;
                 if(deltax < 0){ deltax *= -1; }
                 if(deltax > 180){deltax = 360 - deltax;}
@@ -45,7 +58,12 @@
                 var ans = (Math.PI * r * alpha) / 180;
                 console.log("ans = " + ans);
                 ans -= ans % 1;
-                alert( ans + "  kilometers" );
+                if(!isNaN(ans))
+                {
+                    document.getElementById("submit-input").value = ans; 
+                }
+
+
             }
         </script>
     </body>
