@@ -78,14 +78,18 @@ body{
     font-weight:normal;
 }
 .i:hover::-webkit-input-placeholder{
+    transition:0.3s;
     color: red;
 }
 .i:hover::-moz-placeholder{
+    transition:0.3s;
     color: red;
 }
 .i:hover:-moz-placeholder{
+    transition:0.3s;
     color: red;
 }
 .i:hover:-ms-input-placeholder{
+    transition:0.3s;
     color:red;
 }
