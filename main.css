@@ -62,7 +62,7 @@ body{
     border:solid 2px;
     border-color: #cadff2;
     cursor: pointer;
-    transition: color 0.3s , border-color 0.3s;
+    transition: 0.3s;
 }
 #submit-input:hover{
     color: red;
