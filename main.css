@@ -30,7 +30,7 @@ body{
     padding-top: 5px;
 */
     background:#d8d8d8;
-    color: #484848;
+    color: #484848; 
 }
 .i:focus{
     outline: none;
